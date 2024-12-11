@@ -1,8 +1,6 @@
-import '@repo/ui/styles.css'
-import { Toaster } from '@repo/ui/ui/toaster'
 import type { Metadata } from 'next'
-import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
+import type { JSX } from 'react'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,17 +17,7 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang='ja'>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='light'
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-        <Toaster />
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

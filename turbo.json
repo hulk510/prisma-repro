@@ -1,13 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": [
-    "DATABASE_URL",
-    "AUTH_SECRET",
-    "AUTH_GOOGLE_ID",
-    "AUTH_GOOGLE_ID_SECRET",
-    "AUTH_REDIRECT_PROXY_URL",
-    "SENTRY_AUTH_TOKEN"
-  ],
+  "globalEnv": ["DATABASE_URL"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -17,14 +10,6 @@
         "storybook-static/**",
         "dist/**"
       ]
-    },
-    "test": {},
-    "test:watch": {
-      "cache": false,
-      "persistent": true
-    },
-    "test:coverage": {
-      "outputs": ["coverage/**"]
     },
     "//#format-and-lint": {
       "outputLogs": "errors-only"

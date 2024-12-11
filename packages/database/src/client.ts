@@ -23,7 +23,8 @@ const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient
 }
 
-export const prisma = new PrismaClient({ adapter })
+export const prisma = new PrismaClient({ adapter, log: ['query'] })
+console.log(prisma)
 
 if (process.env.NODE_ENV !== 'production')
   globalForPrisma.prisma = prisma
