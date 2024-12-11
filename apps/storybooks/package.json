@@ -1,0 +1,45 @@
+{
+  "name": "storybooks",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6006 --ci",
+    "build": "storybook build --output-dir storybook-static --webpack-stats-json=storybook-static",
+    "test-storybook": "test-storybook"
+  },
+  "dependencies": {
+    "@repo/ui": "workspace:*",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "2.0.2",
+    "@repo/mocks": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
+    "@storybook/addon-a11y": "8.3.2",
+    "@storybook/addon-essentials": "8.3.2",
+    "@storybook/addon-interactions": "8.3.2",
+    "@storybook/addon-links": "8.3.2",
+    "@storybook/addon-onboarding": "8.3.2",
+    "@storybook/addon-styling-webpack": "1.0.0",
+    "@storybook/addon-themes": "8.3.2",
+    "@storybook/blocks": "8.3.2",
+    "@storybook/react": "8.3.2",
+    "@storybook/react-vite": "8.3.2",
+    "@storybook/test": "8.3.2",
+    "@storybook/test-runner": "0.19.1",
+    "@types/react": "18.3.8",
+    "@types/react-dom": "18.3.0",
+    "@vitejs/plugin-react-swc": "3.7.0",
+    "chromatic": "11.10.2",
+    "msw": "2.4.9",
+    "msw-storybook-addon": "2.0.3",
+    "playwright": "1.47.2",
+    "postcss": "8.4.47",
+    "storybook": "8.3.2",
+    "tailwindcss": "3.4.12",
+    "typescript": "5.6.2",
+    "vite": "5.4.7"
+  }
+}

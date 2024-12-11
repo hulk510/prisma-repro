@@ -1,0 +1,36 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    "config:js-app",
+    ":automergeAll",
+    ":automergePr",
+    ":disablePrControls",
+    ":label(renovate)",
+    ":maintainLockFilesWeekly",
+    ":rebaseStalePrs",
+    ":semanticCommits",
+    "npm:unpublishSafe",
+    "schedule:daily",
+    "customManagers:biomeVersions"
+  ],
+  "automergeStrategy": "squash",
+  "assigneesFromCodeOwners": true,
+  "dependencyDashboardAutoclose": true,
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["(^|/)\\.npmrc$"],
+      "matchStrings": ["use-node-version=(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "node",
+      "datasourceTemplate": "node-version"
+    }
+  ],
+  "packageRules": [
+    {
+      "extends": ["monorepo:turbo"],
+      "groupName": "turbo monorepo",
+      "matchUpdateTypes": ["digest", "patch", "minor", "major"]
+    }
+  ]
+}

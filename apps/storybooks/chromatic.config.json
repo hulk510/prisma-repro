@@ -1,0 +1,7 @@
+{
+  "projectId": "Project:66cfdc0c2fccb7f25fdffba6",
+  "storybookBaseDir": "apps/storybooks",
+  "storybookBuildDir": "storybook-static",
+  "skipUpdateCheck": true,
+  "zip": true
+}

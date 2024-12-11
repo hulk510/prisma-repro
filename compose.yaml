@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16-alpine@sha256:d898b0b78a2627cb4ee63464a14efc9d296884f1b28c841b0ab7d7c42f1fffdf
+    environment:
+      POSTGRES_USER: monorepo-template
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: monorepo-template
+    ports:
+      - "54320:5432"
+    restart: always
+    volumes:
+      - monorepo-template-db:/var/lib/postgresql/data
+  pg_proxy:
+    image: ghcr.io/neondatabase/wsproxy:latest@sha256:504c8ea771b4eb4e5275b006812bd0d0d9b563172ecc12f0114249a90b0509b4
+    environment:
+      APPEND_PORT: "postgres:5432"
+      ALLOW_ADDR_REGEX: ".*"
+      LOG_TRAFFIC: "true"
+    ports:
+      # Expose the WebSocket proxy port to the host machine,
+      - "54330:80"
+    depends_on:
+      - postgres
+
+volumes:
+  monorepo-template-db:

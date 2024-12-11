@@ -1,0 +1,16 @@
+{
+  "name": "@repo/mocks",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {},
+  "export": {
+    "./msw/*": "./msw/*.ts"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/lodash": "4.17.7",
+    "lodash": "4.17.21",
+    "msw": "2.4.9",
+    "typescript": "5.6.2"
+  }
+}

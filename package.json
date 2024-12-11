@@ -1,0 +1,42 @@
+{
+  "name": "monorepo-template",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "format-and-lint": "biome check .",
+    "format-and-lint:fix": "biome check . --write",
+    "test": "turbo test",
+    "test:watch": "turbo test:watch",
+    "test:coverage": "turbo test:coverage",
+    "gen": "turbo generate",
+    "prepare": "husky",
+    "clean": "rm -rf .turbo **/*/.turbo** node_modules **/*/node_modules**",
+    "postinstall": "manypkg check",
+    "package:fix": "manypkg fix",
+    "ui:add": "pnpm --filter @repo/ui ui:add"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.11.0",
+  "dependencies": {
+    "@biomejs/biome": "1.9.2",
+    "@changesets/changelog-github": "0.5.0",
+    "@changesets/cli": "2.27.8",
+    "@manypkg/cli": "0.21.4",
+    "@repo/stylelint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "husky": "9.1.6",
+    "prettier": "3.3.3",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "0.6.6",
+    "turbo": "2.1.2"
+  },
+  "msw": {
+    "workerDirectory": [
+      "./apps/storybooks/public",
+      "./apps/web/public"
+    ]
+  }
+}

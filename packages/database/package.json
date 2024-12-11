@@ -1,0 +1,35 @@
+{
+  "name": "@repo/db",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/client.ts"
+  },
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push --skip-generate",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:seed": "tsx src/seed.ts",
+    "dev": "prisma studio --browser none",
+    "format": "prisma format",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "0.9.5",
+    "@prisma/adapter-neon": "5.19.1",
+    "@prisma/client": "latest",
+    "@repo/utils": "workspace:*",
+    "ws": "8.18.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "20.16.5",
+    "@types/ws": "8.5.12",
+    "bufferutil": "4.0.8",
+    "prisma": "latest",
+    "prisma-dbml-generator": "0.12.0",
+    "tsx": "4.19.1",
+    "typescript": "5.6.2"
+  }
+}
